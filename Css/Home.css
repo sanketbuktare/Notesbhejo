@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+    background-image: url("bg2.jpg");
+    background-color: #cccccc;
+    height: auto;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 0;
+}
+
+
+/*header*/
+
+header {
+    width: auto;
+    background-color: rgba(105, 1, 1, 0.979);
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: Faster One;
+    font-stretch: expanded;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(105, 1, 1, 0.979);
+    display: block;
+    color: white;
+    padding-top: 16px;
+    text-decoration: none;
+}
+
+nav {
+    float: right;
+}
+
+.header {
+    background-color: rgba(105, 1, 1, 0.979);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(70, 37, 37);
+}
+
+nav li {
+    float: left;
+    margin-right: 2px;
+    display: inline;
+    border-right: 2px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: rgb(2, 2, 2);
+}
+
+.active {
+    background-color: #009933;
+}
+
+
+/*quote*/
+
+.quote {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    width: auto;
+}
+
+
+/*button*/
+
+.SubmitButton {
+    display: inline-block;
+    border-radius: 5px;
+    border-color: #009933;
+    background-color: #3f0263;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.SubmitButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.SubmitButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.SubmitButton:hover span {
+    padding-right: 25px;
+}
+
+.SubmitButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+/* adjusting div */
+
+div {
+    bottom: 100%;
+}
+
+.divelement {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.child1,
+.child1 {
+    display: table-cell;
+}
+
+.child1 {
+    width: auto;
+}
+
+.child2 {
+    width: auto;
+}
+
+.child3 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.par {
+    padding-left: 25px;
+}
+
+
+/* labels and dropdown*/
+
+#year {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 25px;
+}
+
+#branch {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#select1 {
+    font-size: 20px;
+    max-width: 150px;
+    min-width: 50px;
+    width: 125px !important;
+    border: 2px solid #ce0101;
+    border-radius: 6px;
+}
+
+#select2 {
+    font-size: 20px;
+    max-width: 225px;
+    min-width: 50px;
+    width: 164px !important;
+    border: 2px solid #ce0101;
+    border-radius: 6px;
+}
+
+
+/*section*/
+
+section {
+    width: auto;
+    background-color: white;
+    padding: 0;
+    padding-bottom: 0;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    position: relative;
+    padding-top: 0;
+}
+
+
+/*footer*/
+
+footer {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
