@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Notes</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../Css/show.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
+    <h2>Available Notes</h2>
+    <b>Note: If you don't see any notes then there may not have been uploaded any!</b>
+    <br><br>
+    <table id="List">
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBUXTZN0EcHG6KXsS-btamUtdxQyyMWpnE",
+            authDomain: "notes-bhejo.firebaseapp.com",
+            databaseURL: "https://notes-bhejo.firebaseio.com",
+            projectId: "notes-bhejo",
+            storageBucket: "notes-bhejo.appspot.com",
+            messagingSenderId: "2874738184",
+            appId: "1:2874738184:web:ac3cbb8d666448d8d633bd",
+            measurementId: "G-33RCTRVHR1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+        var storage = firebase.storage();
+        var storageR = storage.ref();
+        $('#List').find('tbody').html('');
+        var i = 0;
+        storageR.child('first_year/engineering_mechanics/').listAll().then(function(result) {
+            result.items.forEach(function(fileRef) {
+                //console.log("Image Reference" + imageRef.toString());
+                i++;
+                displayFile(i, fileRef);
+            });
+        });
+
+        function displayFile(row, files) {
+            files.getDownloadURL().then(function(url) {
+                console.log(url);
+                let new_html = '';
+                new_html += '<tr>';
+                new_html += '<td>';
+                new_html += '<p><embed src="' + url + '" width="400px" height="280px" /></p>';
+                new_html += '</td>';
+                new_html += '<td>';
+                new_html += '<button><a href="' + url + '">See Full</a></button>';
+                new_html += '</td>';
+                new_html += '</tr>';
+                new_html += '';
+                $('#List').find('tbody').append(new_html);
+            })
+        }
+    </script>
+
+</body>
+
+</html>
